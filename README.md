@@ -18,11 +18,11 @@
 - `Small/` : notebook exécuté, dataset CSV, modèle déployé (`modele_bestsellers.joblib`).
 - `Big/` : notebook exécuté, modèles exportés (`modele_pommes_de_terre.json` : régression logistique ;
   `modele_pommes_de_terre_foret.joblib` : forêt aléatoire), configuration du cluster Hadoop
-  (`docker-compose.yaml`).
+  (`hadoop/docker-compose.yaml` et `hadoop/config`, image officielle `apache/hadoop:3`).
 
 ## Reproduire
 - Environnement : Python 3.12, pandas, scikit-learn, PySpark 3.5, Java 8 (Windows).
 - **Small** : ouvrir le notebook et tout exécuter (le CSV est dans le dossier).
 - **Big** : les images ne sont pas dans le dépôt (2,9 Go). Il faut les télécharger depuis Kaggle (*setimage*)
   et placer les dossiers `train/` et `test/` à côté du notebook. Lancer le cluster avec
-  `docker compose up -d` (section 2), puis exécuter le notebook.
+  `cd hadoop && docker compose up -d` (section 2), puis exécuter le notebook.
